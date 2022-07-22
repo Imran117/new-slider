@@ -13,7 +13,7 @@ class Slider {
             elem.className = 'slider__indecators-dot'
             i == 0 ? elem.classList.add('active') : null
             this.ind.append(elem)
-            this.indDots[i].addEventListener('click', () => this.touchDots(i), this.activeSlide = i);
+            this.indDots[i].addEventListener('click', () => this.touchDots(i));
         }
 
         this.prev.addEventListener('click', () => this.sliderActive(this.prev))
@@ -58,6 +58,7 @@ class Slider {
         this.delActive(this.result, 'active')
         this.indDots[i].classList.add('active')
         this.elements[i].classList.add('active')
+        this.activeSlide = i
     }
 }
 
